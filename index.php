@@ -9,7 +9,7 @@ $fp = fopen($filename, 'w');
 $php301code = '<?php header("HTTP/1.1 301 Moved Permanently"); header("Location: '.$url.'"); exit(); ?>';
 fwrite($fp, $php301code);
 fclose($fp);
-
+echo "Your Short url is: http://".$_SERVER['HTTP_HOST']."/".$filename."\n<br>";
 
 
 

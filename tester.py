@@ -3,9 +3,10 @@
 import requests
 import json
 def main():
-	url = "http://ssebastian.koding.com/index.php"
+	url = "http://ssebastian.koding.com/shortURL.php"
 	#url = "http://httpbin.org/post"
-	payload = {'longUrl': 'http://ssebastian.koding.com/index.php'}
+	longUrl = 'http://ssebastian.koding.com/index.html'
+	payload = {'longUrl': longUrl}
 	r = requests.post(url=url, data=payload)
 	print r.content
 	return 0
