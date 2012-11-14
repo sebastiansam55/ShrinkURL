@@ -4,12 +4,13 @@ if (isset($_POST['longUrl'])){
 }else{
 	return "Error Something went wrong!";
 }
-$filename = randString(5).".php";
+$rand = randString(5);
+$filename = $rand.".php";
 $fp = fopen($filename, 'w');
 $php301code = '<?php header("HTTP/1.1 301 Moved Permanently"); header("Location: '.$url.'"); exit(); ?>';
 fwrite($fp, $php301code);
 fclose($fp);
-echo "Your Short url is: http://".$_SERVER['HTTP_HOST']."/".$filename."\n<br>";
+echo "Your Short url is: http://".$_SERVER['HTTP_HOST']."/".$rand."\n<br>";
 
 
 
