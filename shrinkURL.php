@@ -6,6 +6,10 @@ if (isset($_POST['longUrl'])){
 }
 $rand = randString(5);
 $filename = $rand.".php";
+while(file_exists($filename)){
+	$rand = randString(5);
+	$filename = $rand.".php";
+}
 $fp = fopen($filename, 'w');
 $php301code = '<?php header("HTTP/1.1 301 Moved Permanently"); header("Location: '.$url.'"); exit(); ?>';
 fwrite($fp, $php301code);
